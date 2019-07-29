@@ -1,0 +1,73 @@
+.categories{
+  margin-bottom: 50px;
+}
+.flex-container{
+  display: flex;
+  flex-direction: column;
+}
+.flex-container--row{
+  display: flex;
+  & > .categories__item:first-child{
+    background: url("/assets/img/categories/salad.png");
+  }
+  & > .categories__item:nth-child(2){
+    background: url("/assets/img/categories/cookies.jpg");
+  }
+  & > .categories__item:nth-child(3){
+    background: url("/assets/img/categories/soup.png");
+  }
+}
+.flex-container--row:first-child{
+  & > .categories__item{
+    background: url("/assets/img/categories/pizza.png");
+    width: 540px;
+    height: 300px;
+  }
+}
+.flex-container--column{
+  display: flex;
+  flex-direction: column;
+  .categories__item:nth-child(1){
+    background: url("/assets/img/categories/sushi.png");
+  }
+  .categories__item:nth-child(2){
+    background: url("/assets/img/categories/wok.png");
+  }
+}
+.categories__item{
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  width: 255px;
+  height: 140px;
+  margin-right: 30px;
+  -webkit-box-shadow: 1px 1px 8px -3px rgba(89,87,89,1);
+  -moz-box-shadow: 1px 1px 8px -3px rgba(89,87,89,1);
+  box-shadow: 1px 1px 8px -3px rgba(89,87,89,1);
+  &:hover{
+    -webkit-box-shadow: 0px 0px 12px -3px rgba(89,87,89,1);
+    -moz-box-shadow: 0px 0px 12px -3px rgba(89,87,89,1);
+    box-shadow: 0px 0px 12px -3px rgba(89,87,89,1);
+  }
+}
+.categories__name{
+  color: black;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.categories__all{
+  color: #afafaf;
+  border: 1px solid #d7d7d7;
+  border-radius:15px;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 20px;
+  &:hover{
+    color: black;
+  }
+}
+

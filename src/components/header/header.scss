@@ -1,4 +1,4 @@
-//@import "./../../variables"
+@import "./../../variables.scss";
 //@import "./../../mixins"
 
 header{
@@ -26,7 +26,7 @@ background-color: #fff;
   display: inline;
   margin-left: 10px;
   &:hover{
-    color: red;
+    color: $header-hover-color;
     cursor: pointer;
   }
 }

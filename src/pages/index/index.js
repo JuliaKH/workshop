@@ -4,6 +4,7 @@ import "../../components/header/header";
 import "../../components/footer/footer";
 import "./navigation/navigation";
 import "./slider/slider";
+import "./categories/categories";
 
 
 import $ from "jquery";
