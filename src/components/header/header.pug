@@ -1,5 +1,5 @@
 //include  ../popup/popup
-//include ../sign-in/sign-in
+include ../sign-in/sign-in
 //include ../sign-out/sign-out
 
 mixin header
@@ -10,4 +10,4 @@ mixin header
             .header__contacts Contacts
             .sign-in
                 img.sign-in__logo(src="./assets/img/header/signin.png" alt="sign_in")
-                .sign-in__text Sign in
+                +sign-in.sign-in__button

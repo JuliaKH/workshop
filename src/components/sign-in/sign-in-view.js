@@ -1,4 +1,4 @@
-import "./sign-in.sass";
+import "./sign-in.sсss";
 import placeholderImage from "../../../assets/img/header/avatar-plaseholder.png";
 import { signInDom, signInFormVars, registrationFormVars } from "./variables";
 import { Popup } from "../popup/popup";

@@ -1,0 +1,26 @@
+.parallax-info {
+  background-image: url("https://wallpaperbro.com/img/230332.jpg");
+  height: 500px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  border-radius: 0px 0px 20px 20px;
+  .content {
+    background: rgba(0,0,0,0.4);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+    margin-bottom: 80px;
+    .content-text {
+      max-width: 700px;
+      text-align: justify;
+      margin: 0 auto;
+      font-size: 20px;
+      color: #fff;
+      font-family: cursive;
+    }
+  }
+}

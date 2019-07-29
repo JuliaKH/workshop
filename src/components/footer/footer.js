@@ -1,4 +1,4 @@
-// import "./footer.sass";
+import "./footer.scss";
 
 import "../../../assets/img/footer-icons/avito.png";
 import "../../../assets/img/footer-icons/fb.png";
