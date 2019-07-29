@@ -1,0 +1,26 @@
+//@import "./../../variables"
+//@import "./../../mixins"
+
+header{
+background-color: #fff;
+}
+.header__title{
+  height: 60px;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sign-in__logo{
+  height: 30px;
+  width: 30px;
+}
+.sign-in__text{
+  display: inline;
+  margin-left: 10px;
+  &:hover{
+    color: red;
+    cursor: pointer;
+  }
+}
