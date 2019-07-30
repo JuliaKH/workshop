@@ -7,6 +7,7 @@ import "./slider/slider";
 import "./categories/categories";
 import "./sales/sales";
 import "./info/info";
+import "./map/map";
 
 
 import $ from "jquery";

@@ -35,7 +35,7 @@
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #4CAF50;
+  //background-color: #4CAF50;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -67,5 +67,11 @@
   display: inline;
 }
 .google-btn{
-  background-color: crimson!important;
+  background-color: crimson;
+}
+.login-btn{
+  background-color: #4CAF50;
+}
+.register-btn{
+  background-color: cornflowerblue;
 }
