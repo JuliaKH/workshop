@@ -2,13 +2,13 @@ import * as firebase from "firebase";
 
 import SignInObservable  from './Observable'
 import Observer from './Observer'
-import {closeForm} from "../sign-in";
-import {signInButton} from '../sign-in'
+import {closeForm} from "../sign-in-view";
+import {signInButton} from '../sign-in-view'
+import {signOutButton} from '../sign-in'
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
 const googleSignInBtn = document.querySelector('.google-btn');
-let signOutButton = document.querySelector('.sign-out__button');
 
 const closeRegistrationForm = () => {
     closeForm();
@@ -44,17 +44,5 @@ googleSignInBtn.addEventListener('click', () => {
     googleSignIn();
 });
 
-signOutButton.addEventListener('click', () => {
-    firebase.auth().signOut().then(() => {
-        signInButton.classList.add('sign-in__button--active');
-        signOutButton.classList.remove('sign-in__button--active');
-        document.querySelector('.sign-in__logo').src = "./assets/img/header/signin.png";
-    }).catch((error) => {
-        console.log(error);
-    });
 
-});
-
-
-
-// export {signInButton, signInFormCloseObserver, setPhotoObserver};
+export {signInButton, closeRegistrationForm};

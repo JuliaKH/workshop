@@ -1,23 +1,31 @@
-// import "./sign-in.sсss";
-// import placeholderImage from "../../../assets/img/header/avatar-plaseholder.png";
-// import { signInDom, signInFormVars, registrationFormVars } from "./variables";
-// import { Popup } from "../popup/popup";
-//
-// class AuthForm extends Popup {
-//   constructor(form) {
-//     super(form.button, form.container, form.closeElement);
-//
-//     this.switchButton = form.switchButton;
-//     this.switchedContainer = form.switchedContainer;
-//
-//     this.switchButton.addEventListener("click", () => {
-//       form.container.classList.remove("is-active");
-//       this.switchedContainer.classList.add("is-active");
-//     });
-//   }
-// }
-// const signInForm = new AuthForm(signInFormVars);
-// const registrationForm = new AuthForm(registrationFormVars);
-// signInDom.userAvatarImage.src = placeholderImage;
-//
-// export { signInForm, registrationForm, AuthForm };
+let isLoginFormOpen = false;
+
+const signInButton = document.querySelector('.sign-in__button');
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+signInButton.addEventListener('click',  () => {
+    if(isLoginFormOpen){
+        closeForm();
+        isLoginFormOpen = false;
+    }
+    else{
+        openForm();
+        isLoginFormOpen = true;
+    }
+});
+
+document.addEventListener('click', (event) => {
+
+    if(event.target !== signInButton && !event.target.closest('.form-container')){
+        closeForm();
+    }
+});
+
+export {closeForm, signInButton};
