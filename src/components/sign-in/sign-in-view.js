@@ -2,13 +2,13 @@ let isLoginFormOpen = false;
 
 const signInButton = document.querySelector('.sign-in__button');
 
-function openForm() {
+let openForm = () => {
     document.getElementById("myForm").style.display = "block";
-}
+};
 
-function closeForm() {
+let closeForm = () => {
     document.getElementById("myForm").style.display = "none";
-}
+};
 
 signInButton.addEventListener('click',  () => {
     if(isLoginFormOpen){
