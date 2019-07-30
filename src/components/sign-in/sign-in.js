@@ -7,9 +7,9 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-let signInButton = document.querySelector('.sign-in__button');
+const signInButton = document.querySelector('.sign-in__button');
 
-signInButton.addEventListener('click', function () {
+signInButton.addEventListener('click',  () => {
   if(isLoginFormOpen){
     closeForm();
     isLoginFormOpen = false;
@@ -19,3 +19,5 @@ signInButton.addEventListener('click', function () {
     isLoginFormOpen = true;
   }
 });
+
+export {closeForm, signInButton};

@@ -18,15 +18,9 @@ background-color: #fff;
   margin-right: 10px;
 }
 .sign-in__logo{
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   margin-left: 50px;
+  border-radius: 50px;
 }
-.sign-in__button{
-  display: inline;
-  margin-left: 10px;
-  &:hover{
-    color: $header-hover-color;
-    cursor: pointer;
-  }
-}
+

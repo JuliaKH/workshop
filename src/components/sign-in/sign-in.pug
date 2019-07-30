@@ -1,5 +1,6 @@
 mixin sign-in
-    .sign-in__button Sign in
+    .sign-in__button.sign-in__button--active Sign in
+    .sign-out__button Sign out
     #myForm.form-popup
         form.form-container(action='/action_page.php')
             h1 Login
@@ -10,3 +11,4 @@ mixin sign-in
                 b Password
             input(type='password', placeholder='Enter Password', name='psw', required='')
             button.btn(type='submit') Login
+            button.btn.google-btn(type='button') Sign in with Google

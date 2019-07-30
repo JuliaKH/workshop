@@ -1,32 +1,30 @@
 import * as firebase from "firebase";
-import '../variables'
-import { signInForm } from '../sign-in-view'
-import { googleSignOutBtn } from '../../sign-out/googlesign-out'
-import { signInDom } from "../variables";
-
-const provider = new firebase.auth.GoogleAuthProvider();
 
 import SignInObservable  from './Observable'
 import Observer from './Observer'
+import {closeForm} from "../sign-in";
+import {signInButton} from '../sign-in'
 
-const signInButton = signInDom.openSignInFormButton,
-      googleSignInBtn = document.getElementById('google-sign-in');
+const provider = new firebase.auth.GoogleAuthProvider();
+
+const googleSignInBtn = document.querySelector('.google-btn');
+let signOutButton = document.querySelector('.sign-out__button');
 
 const closeRegistrationForm = () => {
-    signInForm.close();
+    closeForm();
 };
 const addUserImage = (user) => {
-    document.querySelector('.avatar').src = user.photoURL;
+    document.querySelector('.sign-in__logo').src = user.photoURL;
 };
 
 const googleSignIn  = () => {
-    firebase.auth().signInWithPopup(provider).then(function(result) {
+    firebase.auth().signInWithPopup(provider).then((result) => {
         const token = result.credential.accessToken;
         const user = result.user;
-
-        signInButton.classList.remove('active');
-        googleSignOutBtn.classList.add('active');
-        UserSignInObservable.notifyObservers(user);})
+        signInButton.classList.remove('sign-in__button--active');
+        signOutButton.classList.add('sign-in__button--active');
+        UserSignInObservable.notifyObservers(user);
+        })
         .catch(function(error) {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -46,21 +44,17 @@ googleSignInBtn.addEventListener('click', () => {
     googleSignIn();
 });
 
-
-window.addEventListener('load', function () {
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            googleSignOutBtn.classList.add('active');
-            const displayName = user.displayName;
-            const photoURL = user.photoURL;
-            document.querySelector('.avatar').src = photoURL;
-        }
-        else{
-            signInButton.classList.add('active');
-            document.querySelector('.avatar').src = 'assets/img/header/avatar-plaseholder.png';
-        }
+signOutButton.addEventListener('click', () => {
+    firebase.auth().signOut().then(() => {
+        signInButton.classList.add('sign-in__button--active');
+        signOutButton.classList.remove('sign-in__button--active');
+        document.querySelector('.sign-in__logo').src = "./assets/img/header/signin.png";
+    }).catch((error) => {
+        console.log(error);
     });
+
 });
 
 
-export {signInButton, signInFormCloseObserver, setPhotoObserver};
+
+// export {signInButton, signInFormCloseObserver, setPhotoObserver};
